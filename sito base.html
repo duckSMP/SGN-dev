@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minecraft Developer Portfolio</title>
+    <!-- Tailwind CSS for structure -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts for Syne (Kitty Client style) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Syne:wght@800;900&display=swap" rel="stylesheet">
+
+    <style>
+        /* =========================================================
+           1. BASE SETTINGS
+           ========================================================= */
+        :root {
+            --kitty-purple: #E29DFE;
+            --kitty-purple-accent: #DA92FA;
+            --kitty-shadow: #000000;
+        }
+
+        /* Prevents text selection for extra security */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0b0b12;
+            color: #e2e8f0;
+            overflow-x: hidden;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        /* =========================================================
+           2. TEXT STYLING (KITTY CLIENT INSPIRED)
+           ========================================================= */
+        .kitty-text-style {
+            font-family: 'Syne', 'Impact', sans-serif;
+            font-weight: 900;
+            text-transform: uppercase;
+            color: var(--kitty-purple);
+            text-shadow: 
+                2px 2px 0px var(--kitty-shadow),
+                4px 4px 0px var(--kitty-shadow),
+                6px 6px 0px var(--kitty-shadow),
+                8px 8px 0px var(--kitty-shadow);
+            letter-spacing: -0.01em;
+        }
+
+        .kitty-text-style-sm {
+            font-family: 'Syne', 'Impact', sans-serif;
+            font-weight: 900;
+            text-transform: uppercase;
+            color: var(--kitty-purple);
+            text-shadow: 
+                2px 2px 0px var(--kitty-shadow),
+                4px 4px 0px var(--kitty-shadow);
+        }
+
+        /* =========================================================
+           3. CARDS & INTERACTIVE COMPONENTS
+           ========================================================= */
+        .glass-card {
+            background: rgba(20, 20, 32, 0.85);
+            backdrop-filter: blur(14px);
+            border: 1px solid rgba(226, 157, 254, 0.15);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .glass-card:hover {
+            border-color: rgba(226, 157, 254, 0.5);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 30px -5px rgba(226, 157, 254, 0.15);
+        }
+
+        .discord-btn {
+            background: #5865F2;
+            transition: all 0.2s ease;
+            box-shadow: 4px 4px 0px #000;
+        }
+
+        .discord-btn:hover {
+            background: #4752C4;
+            transform: translate(-2px, -2px);
+            box-shadow: 6px 6px 0px #000;
+        }
+
+        .discord-btn:active {
+            transform: translate(2px, 2px);
+            box-shadow: 2px 2px 0px #000;
+        }
+
+        .pixel-pattern {
+            background-image: radial-gradient(rgba(226, 157, 254, 0.12) 1px, transparent 1px);
+            background-size: 24px 24px;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between relative overflow-x-hidden">
+
+    <!-- =========================================================
+         LOCAL BACKGROUND VIDEO (MP4)
+         ========================================================= -->
+    <div class="fixed inset-0 w-full h-full pointer-events-none z-0 overflow-hidden opacity-40">
+        <video autoplay loop muted playsinline class="w-full h-full object-cover">
+            <source src="Topographic Textures After Effects Topographic Design Topographi.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <!-- GRAPHIC PATTERN OVERLAY -->
+    <div class="fixed inset-0 pixel-pattern pointer-events-none z-10"></div>
+
+    <div class="relative z-20 flex-grow">
+        <!-- =========================================================
+             NAVBAR
+             ========================================================= -->
+        <nav class="max-w-6xl mx-auto px-6 py-6 flex justify-between items-center">
+            <div class="kitty-text-style-sm text-2xl tracking-wider">
+                <span class="text-#E29DFE">SGN</span><span class="text-white">PORTFOLIO</span>
+            </div>
+            
+            <!-- NAV DISCORD LINK -->
+            <a href="https://discord.gg/cUYquVYqM" target="_blank" class="discord-btn text-white font-bold px-4 py-2 rounded-lg flex items-center gap-2 text-sm">
+                <i class="fa-brands fa-discord text-lg"></i>
+                <span>Discord</span>
+            </a>
+        </nav>
+
+        <!-- =========================================================
+             HERO SECTION
+             ========================================================= -->
+        <header class="max-w-5xl mx-auto px-6 pt-10 pb-16 text-center">
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass-card mb-6 text-xs font-semibold tracking-wider text-purple-300 uppercase">
+                <span class="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>
+                Available for Minecraft Server Projects
+            </div>
+
+            <!-- MAIN TITLE KITTY CLIENT STYLE -->
+            <h1 class="kitty-text-style text-5xl sm:text-7xl md:text-8xl lg:text-9xl mb-6 leading-none">
+                SGN
+                MC DEV
+            </h1>
+
+            <!-- Subtitle -->
+            <p class="text-gray-300 text-lg md:text-xl max-w-2xl mx-auto mb-8 font-light leading-relaxed">
+                Plugin configuration, permission management, Java/Python development, and community creation.
+            </p>
+
+            <!-- CTA Buttons -->
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="https://discord.gg/cUYquVYqM" target="_blank" class="discord-btn text-white font-bold text-lg px-8 py-4 rounded-xl flex items-center gap-3">
+                    <i class="fa-brands fa-discord text-2xl"></i>
+                    <span>Join Discord</span>
+                </a>
+                <a href="#about" class="glass-card hover:bg-white/10 text-white font-semibold text-lg px-8 py-4 rounded-xl transition duration-200">
+                    About Me
+                </a>
+            </div>
+        </header>
+
+        <!-- =========================================================
+             ABOUT ME (CLEAN SKIN WITHOUT BACKGROUND)
+             ========================================================= -->
+        <section id="about" class="max-w-4xl mx-auto px-6 py-12">
+            <div class="glass-card rounded-2xl p-8 md:p-10 relative overflow-hidden">
+                <div class="absolute top-0 right-0 w-32 h-32 bg-purple-500/10 rounded-full blur-3xl pointer-events-none"></div>
+                
+                <h2 class="kitty-text-style-sm text-3xl mb-6 flex items-center gap-3">
+                    <i class="fa-solid fa-user-gear text-purple-300 text-2xl"></i>
+                    About Me
+                </h2>
+                
+                <!-- SIDE-BY-SIDE CONTAINER: SKIN + TEXT -->
+                <div class="flex flex-col md:flex-row items-center gap-8">
+                    
+                    <!-- CLEAN MINECRAFT SKIN -->
+                    <div class="flex-shrink-0 flex justify-center">
+                        <img src="skin.png" alt="Minecraft Skin" class="w-36 md:w-44 h-auto drop-shadow-2xl">
+                    </div>
+
+                    <!-- PRESENTATION TEXT -->
+                    <div class="space-y-4 text-gray-300 leading-relaxed text-base flex-grow">
+                        <p>
+                            Hello! I'm SGNabbocath_, a configuration specialist focused on Minecraft servers. I specialize in turning raw servers into smooth, complete, and bug-free gaming experiences.
+                        </p>
+                        <p>
+                            I have worked actively on <strong>over 2 Minecraft servers</strong> and a client, managing plugin infrastructure, permission security (LuckPerms, roles, and groups), and conflict resolution between modules.
+                        </p>
+                        <p>
+                            Beyond server management, I know the basics of <strong>Java</strong> and <strong>Python</strong>, which I use for developing or customizing small custom plugins and scripts. I can also configure complete <strong>Discord</strong> servers for your community and build basic <strong>websites</strong> to present your project.
+                        </p>
+                    </div>
+
+                </div>
+
+                <!-- Stats / Badges -->
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mt-8 pt-6 border-t border-purple-500/20">
+                    <div class="text-center p-3 rounded-lg bg-black/40">
+                        <span class="block text-2xl font-bold text-purple-300 font-mono">2+ Servers</span>
+                        <span class="text-xs text-gray-400">Direct Experience</span>
+                    </div>
+                    <div class="text-center p-3 rounded-lg bg-black/40">
+                        <span class="block text-2xl font-bold text-purple-300 font-mono">Java & Py</span>
+                        <span class="text-xs text-gray-400">Coding Languages</span>
+                    </div>
+                    <div class="text-center p-3 rounded-lg bg-black/40 col-span-2 md:col-span-1">
+                        <span class="block text-2xl font-bold text-purple-300 font-mono">Full Setup</span>
+                        <span class="text-xs text-gray-400">Plugins, Permissions & Discord</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- =========================================================
+             SKILLS
+             ========================================================= -->
+        <section class="max-w-5xl mx-auto px-6 py-12">
+            <h2 class="kitty-text-style-sm text-3xl text-center mb-10">
+                Skills
+            </h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                
+                <!-- Card 1 -->
+                <div class="glass-card p-6 rounded-xl">
+                    <div class="w-12 h-12 bg-purple-500/20 rounded-lg flex items-center justify-center text-purple-300 text-xl mb-4">
+                        <i class="fa-solid fa-sliders"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Plugin Configuration</h3>
+                    <p class="text-gray-400 text-sm">
+                        Setup and translation of Spigot/Paper plugins (EssentialsX, WorldGuard, Economy, Crates, etc.).
+                    </p>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="glass-card p-6 rounded-xl">
+                    <div class="w-12 h-12 bg-purple-500/20 rounded-lg flex items-center justify-center text-purple-300 text-xl mb-4">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Permissions & Roles</h3>
+                    <p class="text-gray-400 text-sm">
+                        Complete LuckPerms management, VIP path creation, staff permissions, and command security.
+                    </p>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="glass-card p-6 rounded-xl">
+                    <div class="w-12 h-12 bg-purple-500/20 rounded-lg flex items-center justify-center text-purple-300 text-xl mb-4">
+                        <i class="fa-solid fa-code"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Java Plugin Dev</h3>
+                    <p class="text-gray-400 text-sm">
+                        Ability to develop simple custom plugins to introduce unique features to the server.
+                    </p>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="glass-card p-6 rounded-xl">
+                    <div class="w-12 h-12 bg-purple-500/20 rounded-lg flex items-center justify-center text-purple-300 text-xl mb-4">
+                        <i class="fa-brands fa-python"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Java & Python</h3>
+                    <p class="text-gray-400 text-sm">
+                        Solid foundations in both languages for task automation or script writing.
+                    </p>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="glass-card p-6 rounded-xl">
+                    <div class="w-12 h-12 bg-purple-500/20 rounded-lg flex items-center justify-center text-purple-300 text-xl mb-4">
+                        <i class="fa-brands fa-discord"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Discord Server</h3>
+                    <p class="text-gray-400 text-sm">
+                        Creation and organization of community Discord servers, roles, bots, and chat integration.
+                    </p>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="glass-card p-6 rounded-xl">
+                    <div class="w-12 h-12 bg-purple-500/20 rounded-lg flex items-center justify-center text-purple-300 text-xl mb-4">
+                        <i class="fa-solid fa-globe"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Basic Websites</h3>
+                    <p class="text-gray-400 text-sm">
+                        Development of simple landing pages and websites to present your Minecraft server online.
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- =========================================================
+             WEBSITES BUILT (SITI FATTI)
+             ========================================================= -->
+        <section class="max-w-5xl mx-auto px-6 py-12">
+            <h2 class="kitty-text-style-sm text-3xl text-center mb-10">
+                Websites Built
+            </h2>
+
+            <div class="max-w-md mx-auto">
+
+                <!-- Sito 1 -->
+                <a href="https://voltrix-opt1mizer.netlify.app/" target="_blank" rel="noopener noreferrer" class="glass-card p-6 rounded-xl block group">
+                    <div class="flex items-center gap-4 mb-3">
+                        <div class="w-12 h-12 bg-purple-500/20 rounded-lg flex items-center justify-center text-purple-300 text-xl flex-shrink-0">
+                            <i class="fa-solid fa-globe"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white group-hover:text-purple-300 transition">
+                            Votrix Optimizer
+                        </h3>
+                    </div>
+                    <p class="text-gray-400 text-sm mb-3">
+                        This is a FREE optimization app made by Mr. D. Check it out
+                        
+                    </p>
+                    <span class="inline-flex items-center gap-2 text-purple-300 text-sm font-semibold">
+                        Visita il sito
+                        <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+                    </span>
+                </a>
+
+            </div>
+        </section>
+
+        <!-- =========================================================
+             DISCORD / CONTACT SECTION
+             ========================================================= -->
+        <section class="max-w-4xl mx-auto px-6 py-16 text-center">
+            <div class="glass-card rounded-2xl p-10 border-2 border-purple-400/30">
+                <i class="fa-brands fa-discord text-6xl text-indigo-400 mb-4"></i>
+                <h2 class="kitty-text-style-sm text-4xl mb-3">Contact Me on Discord</h2>
+                <p class="text-gray-300 max-w-lg mx-auto mb-6">
+                    If you need a developer for your server or want information for a collaboration, write to me!
+                </p>
+
+                <div class="inline-flex flex-col sm:flex-row items-center justify-center gap-4 bg-black/50 p-4 rounded-xl border border-white/10">
+                    <button onclick="copyDiscordTag()" class="flex items-center gap-2 font-mono text-purple-300 hover:text-white transition px-3 py-1 rounded bg-white/5 hover:bg-white/10" title="Click to copy">
+                        <i class="fa-solid fa-copy text-sm"></i>
+                        <span id="discord-username" class="text-lg">1072592338720923759</span>
+                    </button>
+
+                    <a href="https://discord.gg/cUYquVYqM" target="_blank" class="discord-btn text-white text-sm font-bold px-6 py-2.5 rounded-lg flex items-center gap-2">
+                        <i class="fa-solid fa-paper-plane"></i>
+                        <span>Join Server</span>
+                    </a>
+                </div>
+                <div id="copy-toast" class="text-xs text-green-400 mt-2 opacity-0 transition-opacity duration-300">Tag copied to clipboard!</div>
+            </div>
+        </section>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="relative z-20 border-t border-purple-500/10 py-6 text-center text-xs text-gray-500">
+        <p>© Minecraft Developer Portfolio</p>
+    </footer>
+
+    <!-- =========================================================
+         JAVASCRIPT SCRIPT: DISCORD COPY + ANTI-INSPECT
+         ========================================================= -->
+    <script>
+        // Copy Discord Tag Function
+        function copyDiscordTag() {
+            const username = document.getElementById('discord-username').innerText;
+            
+            const tempInput = document.createElement('input');
+            tempInput.value = username;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            document.execCommand('copy');
+            document.body.removeChild(tempInput);
+
+            const toast = document.getElementById('copy-toast');
+            toast.classList.remove('opacity-0');
+            setTimeout(() => {
+                toast.classList.add('opacity-0');
+            }, 2000);
+        }
+
+        // =========================================================
+        // ANTI-INSPECT / DEVTOOLS PROTECTION
+        // =========================================================
+
+        // 1. Block Right-Click
+        document.addEventListener('contextmenu', function (e) {
+            e.preventDefault();
+        });
+
+        // 2. Block Keyboard Shortcuts (F12, Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+U, Ctrl+S)
+        document.addEventListener('keydown', function (e) {
+            if (
+                e.key === 'F12' ||
+                (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'i' || e.key === 'J' || e.key === 'j' || e.key === 'C' || e.key === 'c')) ||
+                (e.ctrlKey && (e.key === 'U' || e.key === 'u' || e.key === 'S' || e.key === 's'))
+            ) {
+                e.preventDefault();
+                return false;
+            }
+        });
+
+        // 3. Disable image drag & drop
+        document.addEventListener('dragstart', function (e) {
+            e.preventDefault();
+        });
+    </script>
+</body>
+</html>
